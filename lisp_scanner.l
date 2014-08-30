@@ -1,8 +1,17 @@
+/* tinylisp/lisp_scanner.l */
+
 %{
-
+/* lisp_scanner.l code block begin */
 #include "parser.h"
-
+/* lisp_scanner.l code block end */
 %}
+
+
+/* flex options section */
+%option noyywrap
+%option header-file="lisp_scanner.h"
+%option outfile="lisp_scanner.c"
+
 
 digit   [0-9]
 blank   [ \t]
