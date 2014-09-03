@@ -5,7 +5,7 @@ ACLOCAL_AMFLAGS = -I m4
 #AM_CXXFLAGS = -Wall -Wno-unused -fmax-errors=5
 #AM_CXXFLAGS = -Wall -Wextra -Werror -pedantic-errors # -rdynamic
 #AM_CFLAGS = -std=c99 -Wall -Wextra -Werror # -pedantic-errors
-AM_CFLAGS = -std=c99
+AM_CFLAGS = -std=gnu99
 
 
 bin_PROGRAMS = tinylisp
