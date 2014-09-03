@@ -29,6 +29,11 @@ install:
   - tar vxJf autoconf-archive-2014.02.28.tar.xz
   - cd autoconf-archive-2014.02.28
   - ./configure && make && sudo make install
+  - cd `mktemp -d`
+  - wget http://ftp.gnu.org/gnu/libtool/libtool-2.4.2.tar.xz
+  - tar vxJf libtool-2.4.2.tar.xz
+  - cd libtool-2.4.2
+  - ./configure && make && sudo make install
 
 
 before_script:
