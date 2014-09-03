@@ -28,7 +28,7 @@ script:
   - cd _build
   - autoreconf -ivf ..
   - ../configure --prefix=/tmp/the-prefix
-  - make
+  - make -d
   - make check
   - make distcheck
 
