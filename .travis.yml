@@ -18,9 +18,14 @@ install:
 before_script:
   - env | sort
   - cd `mktemp -d`
-  - wget http://ftp.gnu.org/gnu/autoconf/autoconf-2.69.tar.gz
-  - tar vxzf autoconf-2.69.tar.gz
+  - wget http://ftp.gnu.org/gnu/autoconf/autoconf-2.69.tar.xz
+  - tar vxJf autoconf-2.69.tar.xz
   - cd autoconf-2.69
+  - ./configure && make && sudo make install
+  - cd `mktemp -d`
+  - wget http://ftp.gnu.org/gnu/automake/automake-1.14.1.tar.xz
+  - tar vxJf automake-1.14.1.tar.xz
+  - cd automake-1.14.1
   - ./configure && make && sudo make install
   - autoconf --version
   - automake --version
