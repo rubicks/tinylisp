@@ -38,8 +38,8 @@ script:
   - mkdir -vp _build
   - cd _build
   - autoreconf -ivf ..
-  - ../configure --prefix=/tmp/the-prefix
-  - make -d
+  - ../configure
+  - make
   - make check
   - make distcheck
 
