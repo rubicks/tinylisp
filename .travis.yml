@@ -6,7 +6,6 @@ compiler:
 
 before_install:
   - uname -a
-  - pwd
   - sudo apt-get update -qq
 
 install:
@@ -17,12 +16,18 @@ install:
   - sudo apt-get install -y libtool
 
 before_script:
-  - mkdir -vp _build
-  - cd _build
+  - env | sort
+  - autoconf --version
+  - automake --version
+  - libtool --version
 
 script:
+  - pwd
+  - mkdir -vp m4
+  - mkdir -vp _build
+  - cd _build
   - autoreconf -ivf ..
-  - ../configure --prefix=/tmp/foobar
+  - ../configure --prefix=/tmp/the-prefix
   - make
   - make check
   - make distcheck
