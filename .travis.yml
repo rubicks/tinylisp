@@ -17,11 +17,17 @@ install:
 
 before_script:
   - env | sort
+  - cd `mktemp -d`
+  - wget http://ftp.gnu.org/gnu/autoconf/autoconf-2.69.tar.gz
+  - tar vxzf autoconf-2.69.tar.gz
+  - cd autoconf-2.69
+  - ./configure && make && sudo make install
   - autoconf --version
   - automake --version
   - libtool --version
 
 script:
+  - cd ${TRAVIS_BUILD_DIR}
   - pwd
   - mkdir -vp m4
   - mkdir -vp _build
