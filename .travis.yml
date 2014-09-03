@@ -10,26 +10,32 @@ before_install:
 
 install:
   - sudo apt-get install -y check
+  - sudo apt-get install -y automake
   - sudo apt-get install -y autoconf
   - sudo apt-get install -y autoconf-archive
-  - sudo apt-get install -y automake
   - sudo apt-get install -y libtool
-
-before_script:
-  - env | sort
+  - cd `mktemp -d`
+  - wget http://ftp.gnu.org/gnu/automake/automake-1.14.1.tar.xz
+  - tar vxJf automake-1.14.1.tar.xz
+  - cd automake-1.14.1
+  - ./configure && make && sudo make install
   - cd `mktemp -d`
   - wget http://ftp.gnu.org/gnu/autoconf/autoconf-2.69.tar.xz
   - tar vxJf autoconf-2.69.tar.xz
   - cd autoconf-2.69
   - ./configure && make && sudo make install
   - cd `mktemp -d`
-  - wget http://ftp.gnu.org/gnu/automake/automake-1.14.1.tar.xz
-  - tar vxJf automake-1.14.1.tar.xz
-  - cd automake-1.14.1
+  - wget http://ftp.gnu.org/gnu/autoconf-archive/autoconf-archive-2014.02.28.tar.xz
+  - tar vxJf autoconf-archive-2014.02.28.tar.xz
+  - cd autoconf-archive-2014.02.28
   - ./configure && make && sudo make install
-  - autoconf --version
-  - automake --version
-  - libtool --version
+
+
+before_script:
+  - env | sort
+  - which autoconf && autoconf --version
+  - which automake && automake --version
+  - which libtool  && libtool  --version
 
 script:
   - cd ${TRAVIS_BUILD_DIR}
