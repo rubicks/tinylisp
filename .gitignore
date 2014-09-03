@@ -1,12 +1,12 @@
-/scanner.h
-/lex.yy.c
-/tinylisp
-/.project
-/.cproject
-test_runner
-lisp_scanner.c
-test_scanner
-*.o
+# /scanner.h
+# /lex.yy.c
+# /tinylisp
+# /.project
+# /.cproject
+# test_runner
+# lisp_scanner.c
+# test_scanner
+# *.o
 
 
 # Compiled Object files
@@ -60,10 +60,16 @@ test_scanner
 /m4/
 /missing
 /paths.h
-/rendera
 /stamp-h1
 /test-driver
+/test-suite.log
 /ylwrap
+
+# artifacts
+/lisp_scanner.c
+/lisp_scanner.h
+/test_runner*
+/tinylisp
 
 # emacs temp files
 *~
