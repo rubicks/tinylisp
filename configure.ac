@@ -16,13 +16,18 @@ LT_INIT
 
 # Checks for programs.
 AC_PROG_CC
-AX_PROG_FLEX([],[AC_MSG_ERROR([flex is not available])])
+# AC_PROG_LEX
+AX_PROG_FLEX([],[AC_MSG_ERROR([flex executable missing])])
+
 
 # Checks for libraries.
-# FIXME: Replace `main' with a function in `-lcheck':
-AC_CHECK_LIB([check],[check_fork])
-# FIXME: Replace `main' with a function in `-lreadline':
-AC_CHECK_LIB([readline],[rl_initialize])
+
+AC_CHECK_LIB([check],[check_fork],
+             [],[AC_MSG_ERROR([check library missing])])
+
+AC_CHECK_LIB([readline],[rl_initialize],
+             [],[AC_MSG_ERROR([readline library missing])])
+
 
 # Checks for header files.
 AC_CHECK_HEADERS([stdint.h stdlib.h string.h])

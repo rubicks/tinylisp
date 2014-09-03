@@ -4,8 +4,8 @@
 #include "symbol_table.h"
 #include "parser.h"
 
-//#pragma clang diagnostic push
-//#pragma clang diagnostic ignored "-Wunused-parameter"
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wunused-parameter"
 
 int main( int argc, char**argv )
 {
@@ -24,4 +24,4 @@ int main( int argc, char**argv )
   return 0;
 }
 
-//#pragma clang diagnostic pop
+#pragma clang diagnostic pop
