@@ -4,7 +4,7 @@ AC_PREREQ([2.68])
 AC_INIT([tinylisp],
         [0.1.0-snapshot],
         [web@matthias-schuetz.eu],
-        [rendera],
+        [tinylisp],
         [https://github.com/mschuetz/tinylisp])
 AC_LANG_PUSH([C])
 AC_CONFIG_SRCDIR([tinylisp.c])
